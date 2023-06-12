@@ -3,8 +3,19 @@ from rest_framework import serializers
 
 # userserializer
 from django.contrib.auth.models import User
+# ayni email ile birden fazla kisi uye olmasin diye
+from rest_framework.validators import UniqueValidator
 
 class UserSerializer(serializers.ModelSerializer):
+    # email zorunlu hale geliyor
+    email = serializers.EmailField(
+        required = True,
+        validators = [UniqueValidator(
+            queryset=User.objects.all()
+            )
+        ]
+    )
+
     password = serializers.CharField(
         required = False,
         write_only = True,
