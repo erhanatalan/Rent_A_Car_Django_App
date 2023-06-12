@@ -6,7 +6,6 @@ from .serializers import (
 # userview
 from rest_framework.viewsets import ModelViewSet
 
-class UserView():
-    qeryset = User.objects.all()
+class UserView(ModelViewSet):
+    queryset = User.objects.all()
     serializer_class = UserSerializer
-    
