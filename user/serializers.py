@@ -13,6 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         exclude = []
     
+    # sifre degistirme de otomatik validate islemi saglar
     def validate(self, attrs):
         if attrs.get('password', False):
             from django.contrib.auth.password_validation import validate_password
