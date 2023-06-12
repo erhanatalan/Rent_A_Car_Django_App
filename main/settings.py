@@ -132,3 +132,11 @@ MEDIA_ROOT = BASE_DIR / MEDIA_URL
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# DJANGORESTFRAMEWORK SETTINGS:
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],
+    # 'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAdminUser'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 20,
+}
