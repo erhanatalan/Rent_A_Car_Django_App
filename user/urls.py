@@ -8,8 +8,10 @@ urlpatterns = [
 
 # routers
 from rest_framework.routers import DefaultRouter
-from .views import UserView
+from .views import UserView, UserCreateView
+
 router = DefaultRouter()
+router.register('create', UserCreateView) #ustte olmasi onemli
 router.register('', UserView)
 urlpatterns += router.urls
 

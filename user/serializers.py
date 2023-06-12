@@ -22,7 +22,12 @@ class UserSerializer(serializers.ModelSerializer):
     )
     class Meta:
         model = User
-        exclude = []
+        exclude = [
+            "last_login",
+            "date_joined",
+            "groups",
+            "user_permissions",
+        ]
     
     # sifre degistirme de otomatik validate islemi saglar
     def validate(self, attrs):
