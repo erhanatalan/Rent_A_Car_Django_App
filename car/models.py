@@ -15,8 +15,8 @@ class FixModel(models.Model):
 from django.core.validators import MinValueValidator
 class Car(FixModel):
     GEAR=(
-        ('1', 'Auto'),
-        ('0', 'Manual')
+        (1, 'Auto'),
+        (0, 'Manual')
     )
 
     plate = models.CharField(max_length=16, unique=True)
