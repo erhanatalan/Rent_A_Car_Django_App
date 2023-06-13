@@ -27,6 +27,9 @@ class CarSerializer(FixSerializer):
 # ReservationSerializer
 class ReservationSerializer(FixSerializer):
 
+    car = serializers.StringRelatedField()
+    car_id = serializers.IntegerField()
+
     class Meta:
         model = Reservation
         exclude = []
